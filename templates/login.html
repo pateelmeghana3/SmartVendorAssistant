@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Vendor Assistant | Login</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}?v=5">
+
+</head>
+
+<body class="login-page login-screen">
+
+<div class="floating-circle one"></div>
+<div class="floating-circle two"></div>
+<div class="floating-circle three"></div>
+
+<div class="container py-5">
+
+<div class="row justify-content-center align-items-center vh-100">
+
+<div class="col-xl-11">
+
+<div class="login-card shadow-lg">
+
+<div class="row g-0">
+
+<!-- ========================================= -->
+<!-- LEFT SIDE -->
+<!-- ========================================= -->
+
+<div class="col-lg-6 left-panel d-flex flex-column justify-content-between">
+
+<div>
+
+<span class="badge bg-light text-primary px-3 py-2 mb-4 rounded-pill">
+AI Powered Platform
+</span>
+
+<h1 class="display-5 fw-bold mb-3">
+
+🛍 Smart Vendor Assistant
+
+</h1>
+
+<p class="fs-5 opacity-75">
+
+Manage your shop smarter using AI-powered
+analytics, inventory tracking, weather prediction,
+festival forecasting and intelligent business
+recommendations.
+
+</p>
+
+</div>
+
+<div class="mt-4">
+
+<div class="d-flex align-items-center mb-3">
+
+<i class="bi bi-check-circle-fill me-3 fs-4"></i>
+
+<span>Inventory Management</span>
+
+</div>
+
+<div class="d-flex align-items-center mb-3">
+
+<i class="bi bi-check-circle-fill me-3 fs-4"></i>
+
+<span>Sales Analytics Dashboard</span>
+
+</div>
+
+<div class="d-flex align-items-center mb-3">
+
+<i class="bi bi-check-circle-fill me-3 fs-4"></i>
+
+<span>AI Business Insights</span>
+
+</div>
+
+<div class="d-flex align-items-center mb-3">
+
+<i class="bi bi-check-circle-fill me-3 fs-4"></i>
+
+<span>Weather & Festival Prediction</span>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================================= -->
+<!-- RIGHT SIDE -->
+<!-- ========================================= -->
+
+<div class="col-lg-6 right-panel">
+
+<div class="text-center mb-4">
+
+<div class="mb-3">
+
+<i class="bi bi-person-circle"
+style="font-size:65px;color:#4f46e5;"></i>
+
+</div>
+
+<h2 class="fw-bold">
+
+Welcome Back
+
+</h2>
+
+<p class="subtitle">
+
+Login to access your Smart Vendor Dashboard
+
+</p>
+
+</div>
+
+<form action="/login" method="POST">
+
+<div class="mb-4">
+
+<label class="form-label fw-semibold">
+
+Username
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="bi bi-person"></i>
+
+</span>
+
+<input
+type="text"
+name="username"
+class="form-control"
+placeholder="Enter Username"
+required>
+
+</div>
+
+</div>
+
+<div class="mb-4">
+
+<label class="form-label fw-semibold">
+
+Password
+
+</label>
+
+<div class="input-group">
+
+<span class="input-group-text">
+
+<i class="bi bi-lock"></i>
+
+</span>
+
+<input
+type="password"
+name="password"
+class="form-control"
+placeholder="Enter Password"
+required>
+
+</div>
+
+</div>
+
+<div class="d-grid mb-3">
+
+<button class="btn btn-primary btn-lg">
+
+<i class="bi bi-box-arrow-in-right"></i>
+
+Login
+
+</button>
+
+</div>
+
+</form>
+
+<div class="text-center">
+
+<a href="/forgot_password"
+class="text-decoration-none">
+
+Forgot Password?
+
+</a>
+
+<hr>
+
+<p>
+
+Don't have an account?
+
+<a href="/signup"
+class="fw-bold">
+
+Create Account
+
+</a>
+
+</p>
+
+</div>
+
+<div class="row mt-4 text-center">
+
+<div class="col">
+
+<h4 class="fw-bold text-primary">
+
+500+
+
+</h4>
+
+<small>
+
+Products Managed
+
+</small>
+
+</div>
+
+<div class="col">
+
+<h4 class="fw-bold text-success">
+
+AI
+
+</h4>
+
+<small>
+
+Predictions
+
+</small>
+
+</div>
+
+<div class="col">
+
+<h4 class="fw-bold text-danger">
+
+24×7
+
+</h4>
+
+<small>
+
+Support
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
