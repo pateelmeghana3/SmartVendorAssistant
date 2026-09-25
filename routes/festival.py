@@ -3,14 +3,15 @@ from flask import Blueprint, render_template, request, redirect, session
 from models.festival import (
     get_all_festivals,
     add_festival,
-    delete_festival
+    delete_festival,
+    next_festival
 )
 
 festival_bp = Blueprint("festival", __name__)
 
 
 # ==========================================================
-# FESTIVAL PAGE
+# FESTIVAL INTELLIGENCE
 # ==========================================================
 
 @festival_bp.route("/festival", methods=["GET", "POST"])
@@ -30,14 +31,17 @@ def festival():
 
     festivals = get_all_festivals()
 
+    upcoming = next_festival()
+
     return render_template(
         "festival.html",
-        festivals=festivals
+        festivals=festivals,
+        upcoming=upcoming
     )
 
 
 # ==========================================================
-# DELETE FESTIVAL
+# DELETE CUSTOM EVENT
 # ==========================================================
 
 @festival_bp.route("/delete_festival/<int:id>")

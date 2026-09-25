@@ -13,55 +13,89 @@
 
 <style>
 
-body{
+/* ==========================================================
+   AI INSIGHTS PAGE ONLY
+   ========================================================== */
 
-    background:#f5f7fb;
-
+.ai-insights-page .card {
+    color: #1e293b;
 }
 
-.card{
-
-    border:none;
-
-    border-radius:15px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
+.ai-insights-page .card h3,
+.ai-insights-page .card h4,
+.ai-insights-page .card h5,
+.ai-insights-page .card h6,
+.ai-insights-page .card p {
+    color: #1e293b;
 }
 
-.card-title{
-
-    font-weight:bold;
-
+.ai-insights-page .list-group-item {
+    color: #1e293b;
+    background: white;
 }
 
-.table{
-
-    background:white;
-
+.ai-insights-page .table {
+    color: #1e293b;
 }
 
-.badge-ai{
+.ai-insights-page .table th {
+    color: white;
+}
 
-    background:#2563eb;
+.ai-insights-page .table td {
+    color: #1e293b;
+}
 
-    color:white;
 
-    padding:8px 15px;
+/* ==========================================================
+   AI PAGE CARD
+   ========================================================== */
 
-    border-radius:20px;
+.ai-insights-page .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+}
 
+.ai-insights-page .card-title {
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   AI BADGE
+   ========================================================== */
+
+.ai-insights-page .badge-ai {
+    background: #2563eb;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+
+/* ==========================================================
+   PAGE BACKGROUND
+   ========================================================== */
+
+.ai-insights-page {
+    background: #f5f7fb;
 }
 
 </style>
 
 </head>
 
-<body>
+
+<body class="ai-insights-page">
+
 
 <div class="dashboard">
 
-<!-- SIDEBAR -->
+
+<!-- ======================================================
+     SIDEBAR
+     ====================================================== -->
 
 <div class="sidebar">
 
@@ -83,9 +117,15 @@ body{
 
 </div>
 
-<!-- MAIN -->
+
+<!-- ======================================================
+     MAIN
+     ====================================================== -->
 
 <div class="main">
+
+
+<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -93,9 +133,13 @@ body{
 
 </div>
 
-<!-- SUMMARY -->
+
+<!-- ======================================================
+     SUMMARY CARDS
+     ====================================================== -->
 
 <div class="row mt-4">
+
 
 <div class="col-md-3">
 
@@ -109,6 +153,7 @@ body{
 
 </div>
 
+
 <div class="col-md-3">
 
 <div class="card p-3">
@@ -121,6 +166,7 @@ body{
 
 </div>
 
+
 <div class="col-md-3">
 
 <div class="card p-3">
@@ -132,6 +178,7 @@ body{
 </div>
 
 </div>
+
 
 <div class="col-md-3">
 
@@ -157,9 +204,13 @@ No Sales
 
 </div>
 
+
 </div>
 
-<!-- WEATHER -->
+
+<!-- ======================================================
+     WEATHER
+     ====================================================== -->
 
 <div class="card p-4 mt-4">
 
@@ -183,17 +234,26 @@ Condition :
 
 </div>
 
-<!-- FESTIVAL -->
+
+<!-- ======================================================
+     FESTIVAL
+     ====================================================== -->
 
 <div class="card p-4 mt-4">
 
 <h4>🎉 Upcoming Festival</h4>
 
+
 {% if upcoming %}
 
 <h5>{{ upcoming.festival_name }}</h5>
 
-<p>Date : {{ upcoming.festival_date }}</p>
+<p>
+
+Date : {{ upcoming.festival_date }}
+
+</p>
+
 
 {% else %}
 
@@ -201,9 +261,13 @@ Condition :
 
 {% endif %}
 
+
 </div>
 
-<!-- AI INSIGHTS -->
+
+<!-- ======================================================
+     AI INSIGHTS
+     ====================================================== -->
 
 <div class="card p-4 mt-4">
 
@@ -213,7 +277,9 @@ Condition :
 
 </h4>
 
+
 <ul class="list-group mt-3">
+
 
 {% for item in insights %}
 
@@ -225,11 +291,15 @@ Condition :
 
 {% endfor %}
 
+
 </ul>
 
 </div>
 
-<!-- AI PREDICTIONS -->
+
+<!-- ======================================================
+     AI PREDICTIONS
+     ====================================================== -->
 
 <div class="card p-4 mt-4">
 
@@ -239,7 +309,11 @@ Condition :
 
 </h4>
 
+
+<div class="table-responsive">
+
 <table class="table table-bordered mt-3">
+
 
 <thead>
 
@@ -261,19 +335,37 @@ Condition :
 
 </thead>
 
+
 <tbody>
+
 
 {% for row in predictions %}
 
 <tr>
 
-<td>{{ row.product }}</td>
+<td>
 
-<td>{{ row.stock }}</td>
+{{ row.product }}
 
-<td>{{ row.predicted }}</td>
+</td>
+
 
 <td>
+
+{{ row.stock }}
+
+</td>
+
+
+<td>
+
+{{ row.predicted }}
+
+</td>
+
+
+<td>
+
 
 {% if row.restock > 0 %}
 
@@ -282,6 +374,7 @@ Condition :
 {{ row.restock }}
 
 </span>
+
 
 {% else %}
 
@@ -293,7 +386,9 @@ OK
 
 {% endif %}
 
+
 </td>
+
 
 <td>
 
@@ -303,17 +398,21 @@ OK
 
 </td>
 
+
 <td>
 
 {{ row.festival }}
 
 </td>
 
+
 </tr>
 
 {% endfor %}
 
+
 </tbody>
+
 
 </table>
 
@@ -321,7 +420,11 @@ OK
 
 </div>
 
+
 </div>
+
+</div>
+
 
 </body>
 
