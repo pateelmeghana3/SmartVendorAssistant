@@ -44,6 +44,19 @@ A full-stack Flask application that helps local vendors manage inventory, track 
 - Inventory optimization support
 
 ---
+## 🖥️ Application Preview
+
+### 📊 Business Dashboard
+
+![Business Dashboard](Screenshots/dashboard.png)
+
+### 📦 Inventory Management
+
+![Inventory Management](Screenshots/inventory_management.png)
+
+### 🤖 AI Business Intelligence
+
+![AI Business Intelligence](Screenshots/ai_intelligence.png)
 ## 🏗️ System Architecture
 
 ```text
